@@ -1,0 +1,226 @@
+$navheight:80px;
+.header-nav{
+    fl
+    z-index: 100;
+    height: $navheight;
+    div{
+        height: $navheight;
+        img{
+            margin-top:-12px; 
+        }
+    ul{
+        height:$navheight;
+        li{
+            height: $navheight;
+            a{
+                height: $navheight;
+                line-height: $navheight;
+                padding: 0 15px;
+                // background-color: #d6ee74;
+               
+            }
+        }
+
+    }
+}
+
+
+}
+.banner{
+    margin-top: -20px;
+    img{
+        width: 100%;
+    }
+    .container{
+      width:  100%}
+}
+.container{
+    width: 1014px;
+
+}
+.idea{
+    .container{
+        padding-top: 58px;
+        // position: absolute;
+        // height: 1000px;
+    .h1-list{
+        border-bottom: 1px solid #e5e5e5;
+        text-align:center;
+        position: relative;
+        width:inherit;
+        p{
+            position: relative;
+            font-size: 30px;
+            color: #969696;
+            top:14px; 
+
+        }   
+        p:nth-child(2)
+        {
+            font-size: 18px;
+            background-color: white;
+            width: 104px;
+            height: 30px;
+            margin: auto;
+            margin-top: 12px;
+        }
+        
+    }
+    .item{
+        margin-top: 79px;
+        img{
+            display: block;
+            margin: auto;
+            width: 100px;
+
+        }
+        p{
+            text-align: center;
+        }
+        p:nth-child(2){
+            margin-top: 44px;
+            font-size: 18px;
+            
+
+        }
+        p:nth-child(3){
+            margin-top:21px;
+            font-size: 12px;
+            
+        }
+        // *{margin: auto;}
+    }
+    .about{
+        margin-top:67px;
+        .list{
+            border: 2px solid #969696;
+            width: 171px;
+            height: 198px;
+            display: flex;
+            justify-items: center;
+           flex-wrap: wrap;
+        //    align-items: center;
+           
+           align-content: center;
+           position: relative;
+           p{
+               width: 100%;
+               text-align: center;
+               font-size: 24px;
+            color: #969696;
+            
+
+
+           }
+           p:nth-child(2){
+               font-size: 18px;
+               padding-bottom: 34px;
+               width: 59px;
+               margin: auto;
+               border-bottom: 5px solid #969696; 
+           }
+           span{
+            position: absolute;
+            left: -50px;
+        top: 50px;
+            
+        }
+
+        } 
+        .test{
+            display: flex;
+            justify-items: center;
+           flex-wrap: wrap;
+        //    align-items: center;
+        height: 200px;
+           font-size: 12px;
+           color: #969696;
+           align-content: center;
+           button{
+               display: block;
+            //    float: right;
+            margin-left: 370px;
+            background-color: #d6ee74;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            font-size: 12px;
+               
+           }
+        }
+       
+    }
+}
+}
+footer{
+    width: 100%;
+    
+    background:#454554;
+
+    .row{
+        div{
+            width: 171px;
+
+        }
+    }
+    
+}
+.show{
+    @extend .idea;
+    img{
+        width: 100%;
+        
+    }
+    .product-inlist{
+        margin-top:100px;
+    }
+}
+.news{
+    @extend .idea;
+    .newtime{
+        box-sizing: border-box;
+        padding: 31px;
+        .row{
+            margin: 12px;
+          .col-md-4{
+              p{
+                  font-size: 24px;
+                  margin: 0;
+                  padding-left: 22px;
+
+              }
+              p:nth-child(2){
+                  font-size: 18px;
+              }
+            }
+
+              
+        }
+        .light{
+            background-color: #d6ee74;
+        }
+        
+    }
+    
+    }
+    $viewports: (1:320px, 2:375px, 3:425px, 4:768px, 5: 990px);
+@each $key in map-keys($viewports){
+    @media (min-width: map-get($viewports, $key) ) {
+        .container {
+            width: map-get($viewports, $key);
+        }
+        @if $key == 5 {
+            .container {
+                width: 990px;
+            }
+        }
+        @if $key == 1 {
+            .footer p{
+                text-align: center;
+            }
+            .engine .left {
+                text-align: center;
+            }
+        }
+    }
+}
